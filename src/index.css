@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+html {
+  background: #111;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   DISABLE TEXT SELECTION — ENTIRE WEBSITE
+========================================= */
+
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Browser selection highlight completely invisible */
+::selection {
+  background: transparent;
+  color: inherit;
+}
+
+::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
+
+
+/* Input aur textarea me typing/selecting allowed rahe */
+input,
+textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+
+/* Images ko select/drag nahi kar sakte */
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
