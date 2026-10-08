@@ -1,0 +1,1267 @@
+/* =========================================================
+   CINEMATIC VIDEO PORTFOLIO
+========================================================= */
+
+.portfolio-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 90px 5vw 70px;
+
+  background: #080808;
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND ANIMATION
+========================================================= */
+
+.ambient {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: -3;
+
+  filter: blur(100px);
+
+  opacity: 0.14;
+
+  animation:
+    ambientMove
+    12s
+    ease-in-out
+    infinite alternate;
+}
+
+
+.ambient-one {
+  width: 420px;
+  height: 420px;
+
+  background: #a71925;
+
+  top: 15%;
+  left: -180px;
+}
+
+
+.ambient-two {
+  width: 350px;
+  height: 350px;
+
+  background: #5e0b12;
+
+  top: 45%;
+  right: -160px;
+
+  animation-delay: -4s;
+
+  animation-duration: 15s;
+}
+
+
+.ambient-three {
+  width: 280px;
+  height: 280px;
+
+  background: #9b111e;
+
+  bottom: -100px;
+  left: 40%;
+
+  animation-delay: -7s;
+
+  animation-duration: 18s;
+}
+
+
+@keyframes ambientMove {
+
+  0% {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(
+        100px,
+        -50px,
+        0
+      )
+      scale(1.15);
+  }
+
+  100% {
+    transform:
+      translate3d(
+        -50px,
+        70px,
+        0
+      )
+      scale(0.95);
+  }
+}
+
+
+/* =========================================================
+   VERY SUBTLE GRID
+========================================================= */
+
+.ambient-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  opacity: 0.025;
+
+  background-image:
+    linear-gradient(
+      rgba(
+        255,
+        255,
+        255,
+        0.5
+      ) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.5
+      ) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    70px
+    70px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.portfolio-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 100px;
+}
+
+
+.portfolio-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+
+.label-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #d61f2c;
+
+  box-shadow:
+    0 0 12px
+    rgba(
+      214,
+      31,
+      44,
+      0.8
+    );
+
+  animation:
+    pulseDot
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes pulseDot {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+.label-year {
+  opacity: 0.35;
+}
+
+
+.portfolio-type {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  opacity: 0.35;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.portfolio-heading {
+  display: grid;
+
+  grid-template-columns:
+    70px
+    1fr;
+
+  gap: 25px;
+
+  align-items: start;
+
+  margin-bottom: 80px;
+}
+
+
+.heading-number {
+  padding-top: 12px;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #d61f2c;
+}
+
+
+.portfolio-heading h2 {
+  margin: 0;
+
+  font-family:
+    "Arial Black",
+    Arial,
+    sans-serif;
+
+  font-size:
+    clamp(
+      70px,
+      9vw,
+      135px
+    );
+
+  line-height: 0.8;
+
+  letter-spacing: -7px;
+
+  font-weight: 900;
+}
+
+
+.portfolio-heading h2 span {
+  color: transparent;
+
+  -webkit-text-stroke:
+    1.5px
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+}
+
+
+/* =========================================================
+   LINE
+========================================================= */
+
+.section-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 35px;
+}
+
+
+.section-line span {
+  height: 1px;
+
+  flex: 1;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+}
+
+
+.section-line small {
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: #d61f2c;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.portfolio-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      5,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 16px;
+}
+
+
+/* =========================================================
+   VIDEO CARD
+========================================================= */
+
+.video-card {
+  position: relative;
+
+  cursor: pointer;
+
+  min-width: 0;
+}
+
+
+.video-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio:
+    9 / 16;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: #111;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.11
+    );
+
+  box-shadow:
+    0 15px 50px
+    rgba(
+      0,
+      0,
+      0,
+      0.4
+    );
+
+  transform:
+    translateZ(0);
+
+  transition:
+    transform
+    0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+
+    border-color
+    0.4s ease,
+
+    box-shadow
+    0.5s ease;
+}
+
+
+.video-card:hover
+.video-wrapper {
+  transform:
+    translateY(-7px)
+    scale(1.015);
+
+  border-color:
+    rgba(
+      214,
+      31,
+      44,
+      0.55
+    );
+
+  box-shadow:
+    0 25px 60px
+    rgba(
+      0,
+      0,
+      0,
+      0.65
+    ),
+    0 0 35px
+    rgba(
+      214,
+      31,
+      44,
+      0.08
+    );
+}
+
+
+/* =========================================================
+   POSTER
+========================================================= */
+
+.portfolio-poster {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  z-index: 3;
+
+  transition:
+    opacity
+    0.4s ease,
+
+    transform
+    0.8s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.poster-hidden {
+  opacity: 0;
+}
+
+
+.video-card:hover
+.portfolio-poster {
+  transform:
+    scale(1.06);
+}
+
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.portfolio-video {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SHADE
+========================================================= */
+
+.video-shade {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 4;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(
+        0,
+        0,
+        0,
+        0.05
+      ),
+      rgba(
+        0,
+        0,
+        0,
+        0.55
+      )
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity
+    0.4s ease;
+}
+
+
+.video-card:hover
+.video-shade {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.play-button {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 8;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+
+.play-circle {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+
+  backdrop-filter:
+    blur(7px);
+
+  -webkit-backdrop-filter:
+    blur(7px);
+
+  transition:
+    transform
+    0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    ),
+
+    border-color
+    0.4s ease,
+
+    background
+    0.4s ease;
+}
+
+
+.play-icon {
+  width: 0;
+  height: 0;
+
+  margin-left: 4px;
+
+  border-top:
+    7px solid
+    transparent;
+
+  border-bottom:
+    7px solid
+    transparent;
+
+  border-left:
+    11px solid
+    #ffffff;
+}
+
+
+.video-card:hover
+.play-circle {
+  transform:
+    scale(1.15);
+
+  border-color:
+    #d61f2c;
+
+  background:
+    rgba(
+      214,
+      31,
+      44,
+      0.2
+    );
+}
+
+
+/* =========================================================
+   RED BOTTOM LINE
+========================================================= */
+
+.red-edge {
+  position: absolute;
+
+  left: 15px;
+  right: 15px;
+  bottom: 10px;
+
+  height: 2px;
+
+  z-index: 9;
+
+  border-radius: 20px;
+
+  background:
+    #d61f2c;
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    left;
+
+  transition:
+    transform
+    0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+.video-card:hover
+.red-edge {
+  transform:
+    scaleX(1);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.portfolio-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 80px;
+
+  padding-top: 25px;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 2.5px;
+
+  opacity: 0.35;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.video-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.94
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  animation:
+    modalOpen
+    0.5s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+
+/* OPEN 0.5 SEC */
+
+@keyframes modalOpen {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================================
+   MODAL VIDEO
+========================================================= */
+
+.modal-video-container {
+  position: relative;
+
+  width:
+    min(
+      850px,
+      90vw
+    );
+
+  max-height: 90vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  animation:
+    videoPop
+    0.5s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+@keyframes videoPop {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0.82)
+      translateY(30px);
+  }
+
+  70% {
+    transform:
+      scale(1.015)
+      translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+}
+
+
+/* CLOSE ANIMATION */
+
+.modal-closing {
+  animation:
+    modalClose
+    0.5s
+    ease forwards;
+}
+
+
+.modal-closing
+.modal-video-container {
+  animation:
+    videoPopOut
+    0.5s
+    ease forwards;
+}
+
+
+@keyframes modalClose {
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+@keyframes videoPopOut {
+
+  from {
+    transform:
+      scale(1);
+  }
+
+  to {
+    transform:
+      scale(0.85)
+      translateY(25px);
+  }
+}
+
+
+/* =========================================================
+   MODAL VIDEO ELEMENT
+========================================================= */
+
+.modal-video-container video {
+  display: block;
+
+  max-width: 100%;
+
+  max-height: 88vh;
+
+  width: auto;
+  height: auto;
+
+  border-radius: 14px;
+
+  background: #000;
+
+  box-shadow:
+    0 35px 100px
+    rgba(
+      0,
+      0,
+      0,
+      0.8
+    );
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.modal-close {
+  position: absolute;
+
+  top: 25px;
+  right: 30px;
+
+  width: 50px;
+  height: 50px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.04
+    );
+
+  cursor: pointer;
+
+  z-index: 100000;
+
+  transition:
+    transform
+    0.4s ease,
+
+    background
+    0.4s ease,
+
+    border-color
+    0.4s ease;
+}
+
+
+.modal-close span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 20px;
+  height: 1px;
+
+  background: #fff;
+}
+
+
+.modal-close span:first-child {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    rotate(45deg);
+}
+
+
+.modal-close span:last-child {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    rotate(-45deg);
+}
+
+
+.modal-close:hover {
+  transform:
+    rotate(90deg);
+
+  background:
+    #d61f2c;
+
+  border-color:
+    #d61f2c;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .portfolio-grid {
+    grid-template-columns:
+      repeat(
+        4,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .portfolio-section {
+    padding:
+      70px 4vw;
+  }
+
+
+  .portfolio-header {
+    margin-bottom: 70px;
+  }
+
+
+  .portfolio-heading {
+    grid-template-columns:
+      45px
+      1fr;
+  }
+
+
+  .portfolio-heading h2 {
+    font-size:
+      clamp(
+        60px,
+        12vw,
+        100px
+      );
+
+    letter-spacing: -5px;
+  }
+
+
+  .portfolio-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .portfolio-section {
+    padding:
+      65px 16px 55px;
+  }
+
+
+  .portfolio-header {
+    margin-bottom: 60px;
+  }
+
+
+  .portfolio-type {
+    display: none;
+  }
+
+
+  .portfolio-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .portfolio-heading {
+    display: block;
+
+    margin-bottom: 60px;
+  }
+
+
+  .heading-number {
+    display: block;
+
+    margin-bottom: 22px;
+  }
+
+
+  .portfolio-heading h2 {
+    font-size:
+      clamp(
+        50px,
+        15vw,
+        75px
+      );
+
+    letter-spacing: -4px;
+  }
+
+
+  .portfolio-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    gap: 12px;
+  }
+
+
+  .video-wrapper {
+    border-radius: 13px;
+  }
+
+
+  .play-circle {
+    width: 45px;
+    height: 45px;
+  }
+
+
+  .portfolio-footer {
+    margin-top: 60px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .modal-close {
+    top: 15px;
+    right: 15px;
+
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .modal-video-container {
+    width: 94vw;
+  }
+
+
+  .modal-video-container video {
+    border-radius: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ambient,
+  .label-dot {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+}
