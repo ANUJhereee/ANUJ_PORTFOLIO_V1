@@ -1,0 +1,849 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #171717;
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  position: relative;
+  overflow: hidden;
+
+  background-image: url("/raju-mistri.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  color: #fff;
+
+  font-family: "Inter", sans-serif;
+}
+
+
+/* =====================================================
+   CINEMATIC OVERLAY
+===================================================== */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.03) 0%,
+      rgba(0, 0, 0, 0.08) 45%,
+      rgba(0, 0, 0, 0.40) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.55),
+      transparent 55%
+    );
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.top-bar {
+  position: absolute;
+
+  top: 25px;
+  left: 4vw;
+  right: 4vw;
+
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  position: relative;
+
+  z-index: 2;
+
+  padding: 8vh 5vw 4vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.hero-title {
+  align-self: flex-end;
+
+  margin-top: 9vh;
+  margin-right: 5vw;
+
+  text-align: right;
+}
+
+.hero-title p {
+  margin-bottom: 13px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  font-weight: 500;
+
+  text-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title h1 {
+  font-size: clamp(5rem, 9vw, 9rem);
+
+  line-height: 0.78;
+
+  letter-spacing: -8px;
+
+  font-weight: 900;
+
+  color: #fff;
+
+  text-shadow:
+    4px 5px 0 rgba(0, 0, 0, 0.35),
+    0 10px 35px rgba(0, 0, 0, 0.40);
+}
+
+.hero-title h2 {
+  margin-top: 20px;
+
+  font-family: Georgia, serif;
+
+  font-size: clamp(1.5rem, 2.8vw, 3rem);
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  color: #fff;
+
+  text-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+  align-self: flex-end;
+
+  margin-right: 6vw;
+
+  margin-top: -4vh;
+
+  text-align: right;
+}
+
+.intro p {
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  font-weight: 600;
+
+  text-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services {
+  width: fit-content;
+
+  align-self: flex-end;
+
+  margin-right: 6vw;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.services span {
+  padding: 8px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.70);
+
+  border-radius: 30px;
+
+  background: rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(8px);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.bottom {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 0 1vw;
+}
+
+
+/* =====================================================
+   SOCIAL / CONTACT LINKS
+===================================================== */
+
+.socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  flex-wrap: wrap;
+}
+
+.socials a {
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  padding-bottom: 4px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.8);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.socials a:hover {
+  opacity: 0.6;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   CONTACT BUTTON
+===================================================== */
+
+.contact {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 12px 20px;
+
+  border-radius: 30px;
+
+  background: rgba(0, 0, 0, 0.80);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.25s ease;
+
+  white-space: nowrap;
+}
+
+.contact:hover {
+  transform: translateY(-3px);
+
+  background: #000;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .hero-title {
+    margin-right: 2vw;
+  }
+
+  .intro {
+    margin-right: 2vw;
+  }
+
+  .services {
+    margin-right: 2vw;
+  }
+
+  .socials {
+    gap: 16px;
+  }
+
+  .socials a {
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .home {
+    min-height: 100svh;
+
+    background-position: 24% center;
+
+    background-size: cover;
+  }
+
+
+  /* =================================================
+     MOBILE OVERLAY
+  ================================================= */
+
+  .overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.02) 0%,
+        rgba(0, 0, 0, 0.06) 45%,
+        rgba(0, 0, 0, 0.52) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.05) 48%,
+        rgba(0, 0, 0, 0.20) 100%
+      );
+  }
+
+
+  /* =================================================
+     TOP BAR
+  ================================================= */
+
+  .top-bar {
+    top: 18px;
+
+    left: 20px;
+    right: 20px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  /* =================================================
+     HERO
+  ================================================= */
+
+  .hero {
+    min-height: 100svh;
+
+    padding:
+      70px 20px 20px;
+
+    justify-content:
+      space-between;
+  }
+
+
+  /* =================================================
+     TITLE
+  ================================================= */
+
+  .hero-title {
+
+    align-self: flex-end;
+
+    width: 62%;
+
+    max-width: 250px;
+
+    margin-top: 1vh;
+
+    margin-right: 0;
+
+    padding-right: 8px;
+
+    text-align: right;
+  }
+
+
+  .hero-title p {
+    margin-bottom: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 2.5px;
+
+    white-space: nowrap;
+  }
+
+
+  .hero-title h1 {
+
+    font-size:
+      clamp(3.1rem, 13.5vw, 5rem);
+
+    line-height: 0.82;
+
+    letter-spacing: -3px;
+
+    font-weight: 900;
+
+    word-break: normal;
+
+    overflow-wrap: normal;
+
+    text-shadow:
+      3px 4px 0 rgba(0, 0, 0, 0.40),
+      0 8px 25px rgba(0, 0, 0, 0.50);
+  }
+
+
+  .hero-title h2 {
+
+    margin-top: 10px;
+
+    font-size:
+      clamp(1.15rem, 5vw, 1.55rem);
+
+    white-space: nowrap;
+  }
+
+
+  /* =================================================
+     INTRO
+  ================================================= */
+
+  .intro {
+
+    align-self: flex-end;
+
+    width: 45%;
+
+    margin-right: 0;
+
+    margin-top: 0;
+
+    text-align: right;
+  }
+
+
+  .intro p {
+
+    font-size: 10px;
+
+    line-height: 1.45;
+
+    font-weight: 600;
+  }
+
+
+  /* =================================================
+     SERVICES
+  ================================================= */
+
+  .services {
+
+    align-self: flex-end;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-right: 0;
+
+    justify-content: flex-end;
+
+    gap: 6px;
+  }
+
+
+  .services span {
+
+    padding:
+      7px 10px;
+
+    font-size: 6px;
+
+    letter-spacing: 0.7px;
+
+    background:
+      rgba(0, 0, 0, 0.38);
+
+    border-color:
+      rgba(255, 255, 255, 0.75);
+  }
+
+
+  /* =================================================
+     MOBILE BOTTOM
+  ================================================= */
+
+  .bottom {
+
+    padding: 0;
+
+    width: 100%;
+
+    gap: 10px;
+
+    align-items: flex-end;
+  }
+
+
+  /* =================================================
+     MOBILE CONTACT LINKS
+  ================================================= */
+
+  .socials {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 9px;
+
+    flex-wrap: wrap;
+  }
+
+
+  .socials a {
+
+    font-size: 6px;
+
+    letter-spacing: 0.7px;
+
+    padding-bottom: 3px;
+
+    white-space: nowrap;
+  }
+
+
+  /* =================================================
+     MOBILE LET'S WORK
+  ================================================= */
+
+  .contact {
+
+    flex-shrink: 0;
+
+    padding:
+      9px 13px;
+
+    font-size:
+      6.5px;
+
+    letter-spacing:
+      1px;
+
+    white-space:
+      nowrap;
+  }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .home {
+
+    background-position:
+      20% center;
+  }
+
+
+  .hero {
+
+    padding:
+      68px 15px 17px;
+  }
+
+
+  .hero-title {
+
+    width: 64%;
+
+    max-width: 230px;
+
+    padding-right: 5px;
+  }
+
+
+  .hero-title p {
+
+    font-size:
+      6.5px;
+
+    letter-spacing:
+      2px;
+  }
+
+
+  .hero-title h1 {
+
+    font-size:
+      13.5vw;
+
+    line-height:
+      0.82;
+
+    letter-spacing:
+      -2.5px;
+  }
+
+
+  .hero-title h2 {
+
+    font-size:
+      1.1rem;
+
+    margin-top:
+      9px;
+  }
+
+
+  .intro {
+
+    width:
+      48%;
+  }
+
+
+  .intro p {
+
+    font-size:
+      9px;
+  }
+
+
+  .services {
+
+    gap:
+      4px;
+  }
+
+
+  .services span {
+
+    padding:
+      6px 8px;
+
+    font-size:
+      5.5px;
+  }
+
+
+  /* CONTACTS */
+
+  .socials {
+
+    gap:
+      7px;
+  }
+
+
+  .socials a {
+
+    font-size:
+      5.3px;
+
+    letter-spacing:
+      0.6px;
+  }
+
+
+  .contact {
+
+    padding:
+      8px 10px;
+
+    font-size:
+      5.5px;
+  }
+}
+
+
+/* =====================================================
+   VERY NARROW PHONES
+===================================================== */
+
+@media (max-width: 340px) {
+
+  .hero-title {
+
+    width:
+      67%;
+
+    max-width:
+      220px;
+  }
+
+
+  .hero-title h1 {
+
+    font-size:
+      12.8vw;
+
+    letter-spacing:
+      -2px;
+  }
+
+
+  .hero-title h2 {
+
+    font-size:
+      1rem;
+  }
+
+
+  .services span {
+
+    padding:
+      5px 7px;
+
+    font-size:
+      5px;
+  }
+
+
+  .socials {
+
+    gap:
+      5px;
+  }
+
+
+  .socials a {
+
+    font-size:
+      4.8px;
+
+    letter-spacing:
+      0.4px;
+  }
+
+
+  .contact {
+
+    padding:
+      7px 9px;
+
+    font-size:
+      5px;
+  }
+}
+
