@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Pitch Dark Fullscreen Container */
+.dark-loader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  z-index: 99999;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth Fade & Zoom Exit */
+.dark-loader.loader-fade-exit {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+/* Subtle Red Studio Spotlight in Center Background */
+.studio-spotlight {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(180, 0, 0, 0.12) 0%,
+    rgba(10, 0, 0, 0.05) 45%,
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: pulseSpot 4s ease-in-out infinite alternate;
+}
+
+/* Center Content Stack */
+.loader-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  margin: auto 0;
+}
+
+/* Minimal Focus Ring behind Logo */
+.focus-ring {
+  position: absolute;
+  top: -15px;
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-top-color: rgba(229, 9, 20, 0.5);
+  border-radius: 50%;
+  animation: spinRing 10s linear infinite;
+  pointer-events: none;
+}
+
+/* Logo Styling */
+.logo-holder {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.dark-logo {
+  width: 210px;
+  max-width: 65vw;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 25px rgba(0, 0, 0, 0.9));
+  animation: logoEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Typography */
+.brand-header {
+  text-align: center;
+}
+
+.title-text {
+  font-size: clamp(24px, 4.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: 14px;
+  margin: 0 0 10px 0;
+  padding-left: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  animation: trackingExpand 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.subtitle-tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: #666666;
+  font-weight: 600;
+}
+
+.subtitle-tags .dot {
+  color: #e50914;
+  font-size: 10px;
+}
+
+/* Minimal Film Progress Bar */
+.film-loader-block {
+  width: min(340px, 78vw);
+  margin-top: 45px;
+}
+
+.track-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #555555;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.track-count {
+  color: #e50914 !important;
+}
+
+.dark-progress-track {
+  width: 100%;
+  height: 2px;
+  background: #181818;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.dark-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #800000, #e50914);
+  position: relative;
+  transition: width 0.05s linear;
+}
+
+.head-light {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #e50914, 0 0 15px #ffffff;
+}
+
+/* Film Strip Dots Accent */
+.film-dots {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  opacity: 0.25;
+}
+
+.film-dots span {
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+/* Footer Section */
+.loader-footer {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #444444;
+  font-weight: 500;
+  z-index: 5;
+}
+
+/* Keyframe Animations */
+@keyframes spinRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseSpot {
+  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.95); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+@keyframes logoEntrance {
+  0% { opacity: 0; transform: scale(0.9); filter: blur(10px); }
+  100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes trackingExpand {
+  0% { opacity: 0; letter-spacing: 24px; }
+  100% { opacity: 1; letter-spacing: 14px; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .focus-ring {
+    width: 200px;
+    height: 200px;
+  }
+
+  .title-text {
+    font-size: 20px;
+    letter-spacing: 7px;
+    padding-left: 7px;
+  }
+
+  .subtitle-tags {
+    font-size: 7.5px;
+    letter-spacing: 2px;
+    gap: 6px;
+  }
+
+  .loader-footer {
+    font-size: 7.5px;
+    letter-spacing: 2px;
+  }
+}
